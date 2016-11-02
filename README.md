@@ -1,5 +1,6 @@
 ---
 author: Chi Zhang
+level: Professional
 ---
 
 In this tutorial we describe a full Bayesian framework for species tree estimation. The statistical method- ology described in this tutorial is known by the acronym *BEAST (pronounced “star beast”).
