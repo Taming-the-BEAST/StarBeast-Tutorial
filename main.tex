@@ -1,13 +1,8 @@
-\documentclass{article}
-\usepackage{url}
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,      
-    urlcolor=cyan,
-}
-\usepackage{graphicx}
+\documentclass[11pt]{article}
+\input{preamble}
+
+% Add your bibtex library here
+\addbibresource{tutorial.bib}
 
 \newcommand{\includeimage}[2][]{%
 %HEVEA\imgsrc{#2.hevea.png}%
@@ -25,13 +20,39 @@
 \newcommand{\logEvery}{{5,000}}
 \newcommand{\screenEvery}{{10,000}}
 
+
+%%%%%%%%%%%%%%%%%%%%
+% Do NOT edit this %
+%%%%%%%%%%%%%%%%%%%%
 \begin{document}
+\renewcommand{\headrulewidth}{0.5pt}
+\headsep = 20pt
+\lhead{ }
+\rhead{\textsc {BEAST v2 Tutorial}}
+\thispagestyle{plain}
 
-\title{*BEAST in BEAST {\BEASTVersion}\\ Estimating Species Tree from Multilocus Data}
 
-\author{Joseph Heled, Remco Bouckaert, Walter Xie and Alexei J Drummond  \\ modified by Chi Zhang}
+%%%%%%%%%%%%%%%%%%
+% Tutorial title %
+%%%%%%%%%%%%%%%%%%
+\begin{center}
 
-\maketitle
+	% Enter the name of your tutorial here
+	\textbf{\LARGE *BEAST in BEAST {\BEASTVersion}}\\\vspace{2mm}
+
+	% Enter a short description of your tutorial here
+	\textbf{\textcolor{mycol}{\Large Estimating Species Tree from Multilocus Data}}\\
+
+	\vspace{4mm}
+
+	% Enter the names of all the authors here
+	{\Large {\em Joseph Heled, Remco Bouckaert, Walter Xie and Alexei J Drummond  \\ modified by Chi Zhang}}
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%
+% Tutorial body %
+%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
@@ -288,7 +309,7 @@ reporting information on the screen. The actual result files are
 saved to the disk in the same location as your input file. The output to the screen will
 look something like this: 
 
-{\tiny   
+{ \tiny   
 \begin{verbatim}
                       BEAST v2.4.2, 2002-2016
              Bayesian Evolutionary Analysis Sampling Trees
@@ -376,7 +397,8 @@ ScaleOperator(popSizeTopScaler.t:Species)          0.1910      23665      54936 
 
 Total calculation time: 135.584 seconds
 End likelihood: -3798.196207797654
-\end{verbatim}}
+\end{verbatim}
+}
 
 \section{Analyzing the results}
 
@@ -523,10 +545,24 @@ Figure~\ref{fig.tracerPrior} shows an example of comparing the traces of the spe
 \caption{\label{fig.tracerPrior} Tracer showing the comparison between the prior and posterior distribution of the species tree height.}
 \end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%
+% Tutorial disclaimer %
+%%%%%%%%%%%%%%%%%%%%%%%
+% Please do not change the license
+% Add the author names and relevant links
+% Add any other aknowledgments here
 \bigskip
-\noindent \href{http://creativecommons.org/licenses/by/4.0/}{\includegraphics[scale=0.8]{figures/ccby.pdf}} This tutorial was for the \href{https://www.bsse.ethz.ch/cevo/taming-the-beast.html}{Taming the BEAST Workshop} on applied phylogenetics and molecular evolution and is licensed under a \href{http://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International License}. 
+\href{http://creativecommons.org/licenses/by/4.0/}{\includegraphics[scale=0.8]{figures/ccby.pdf}} This tutorial was written by Chi Zhang for \href{https://taming-the-beast.github.io}{Taming the BEAST} and is licensed under a \href{http://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International License}. 
 
-\bibliographystyle{plain}
-\bibliography{tutorial}
+%%%%%%%%%%%%%%%%%%%%
+% Do NOT edit this %
+%%%%%%%%%%%%%%%%%%%%
+Version dated: \today
+
+\clearpage
+
+
+
+\printbibliography[heading=relevref]
 
 \end{document}
