@@ -75,7 +75,7 @@ template. So, if you already loaded some data, a warning message will
 pop up indicating that this data will be lost if you switch templates.
 
 <span>![\[fig.template\] Select a new template in
-BEAUti.](figures/BEAUti_selectTemplate "fig:") </span>
+BEAUti.](figures/BEAUti_selectTemplate.png "fig:") </span>
 
 ### Loading the NEXUS file
 
@@ -120,7 +120,7 @@ Figure \[fig.datapartition\] shows the way BEAUti looks after loading
 the appropriate alignments.
 
 <span>![\[fig.datapartition\] Data partition panel after loading
-alignments.](figures/BEAUti_DataPartitions "fig:") </span>
+alignments.](figures/BEAUti_DataPartitions.png "fig:") </span>
 
 For multi-locus analyses, BEAST can link or unlink substitutions models
 across the loci by clicking buttons on the top of
@@ -173,7 +173,7 @@ give us the mapping that we need (Fig. \[fig.taxonset\]).
 
 <span>![\[fig.taxonset\] Selecting taxon sets in BEAUti using the guess
 dialog from the Taxon set
-panel.](figures/BEAUti_Guess_Taxonsets "fig:"){width="90.00000%"}
+panel.](figures/BEAUti_Guess_Taxonsets.png "fig:"){width="90.00000%"}
 </span>
 
 ### Setting up the substitution model
@@ -193,17 +193,17 @@ substitution model for all three partitions: ‘HKY’ for
 
 <span>![\[fig.sitemodel\] Setting up substitution and site models for
 the gopher
-alignments.](figures/BEAUti_Site_Model "fig:"){width="90.00000%"}
+alignments.](figures/BEAUti_Site_Model.png "fig:"){width="90.00000%"}
 </span>
 
 ### Setting up the clock model
 
 <span>![\[fig.clockmodel\] Setting up clock models for the gopher
-alignments.](figures/BEAUti_ClockModel1 "fig:") </span>
+alignments.](figures/BEAUti_ClockModel1.png "fig:") </span>
 <span>![\[fig.clockmodel\] Setting up clock models for the gopher
-alignments.](figures/BEAUti_ClockModel2 "fig:") </span>
+alignments.](figures/BEAUti_ClockModel2.png "fig:") </span>
 <span>![\[fig.clockmodel\] Setting up clock models for the gopher
-alignments.](figures/BEAUti_ClockModel3 "fig:") </span>
+alignments.](figures/BEAUti_ClockModel3.png "fig:") </span>
 
 Then, click on the **Clock Model** tab at the top of the
 main window. In this analysis, we use the ‘Strict Clock’ molecular clock
@@ -240,7 +240,7 @@ on by the mother. In the case of this analysis the data is autosomal
 nuclear, which is the default option (Fig. \[fig.MSP\]).
 
 <span>![\[fig.MSP\] Setting up the multi species coalescent model
-parameters.](figures/BEAUti_MSP "fig:") </span>
+parameters.](figures/BEAUti_MSP.png "fig:") </span>
 
 ### Priors
 
@@ -272,7 +272,7 @@ analysis. Therefore change the priors as follows:
 The resulting configuration is shown in Figure \[fig.priors\].
 
 <span>![\[fig.priors\] Setting up parameter
-priors.](figures/BEAUti_settingPriors "fig:") </span>
+priors.](figures/BEAUti_settingPriors.png "fig:") </span>
 
 ### Operators
 
@@ -321,7 +321,7 @@ of the **treelog.t:26, treelog.t:29, treelog.t:47** to
 The resulting configuration is shown in Figure \[fig.MCMC\].
 
 <span>![\[fig.MCMC\] Setting up the MCMC
-parameters.](figures/BEAUti_MCMC "fig:"){width="90.00000%"} </span>
+parameters.](figures/BEAUti_MCMC.png "fig:"){width="90.00000%"} </span>
 
 If you are using Windows then we suggest you add the suffix `.txt` to
 both of these files (i.e. to specify output file names to
@@ -435,7 +435,7 @@ file. The output to the screen will look something like this:
     End likelihood: -3798.196207797654
 
 <span>![\[fig.BEAST\] Launching
-BEAST.](figures/BEAST2 "fig:"){width="40.00000%"} </span>
+BEAST.](figures/BEAST2.png "fig:"){width="40.00000%"} </span>
 
 Analyzing the results
 =====================
@@ -450,7 +450,7 @@ that BEAST has created called `gopher.log`. You should now see a window
 looking like the snapshot in Figure \[fig.tracer1\].
 
 <span>![\[fig.tracer1\] Tracer with the gopher
-data.](figures/Tracer1 "fig:"){width="85.00000%"} </span>
+data.](figures/Tracer1.png "fig:"){width="85.00000%"} </span>
 
 Remember that MCMC is a stochastic algorithm so the actual numbers will
 not be exactly the same.
@@ -479,7 +479,7 @@ the marginal posterior densities of each of these date estimates
 overlayed (Fig. \[fig.tracer2\]).
 
 <span>![\[fig.tracer2\] Tracer showing the root heights of the lineage
-trees.](figures/Tracer2 "fig:"){width="85.00000%"} </span>
+trees.](figures/Tracer2.png "fig:"){width="85.00000%"} </span>
 
 TreeAnnotator
 -------------
@@ -495,7 +495,7 @@ the TreeAnnotator program and set it up as shown in Figure
 \[fig.TreeAnnotator\].
 
 <span>![\[fig.TreeAnnotator\] Using TreeAnnotator to summarise the tree
-set.](figures/TreeAnnotator "fig:"){width="60.00000%"} </span>
+set.](figures/TreeAnnotator.png "fig:"){width="60.00000%"} </span>
 
 The burnin is the number of trees to remove from the start of the
 sample. Unlike in Tracer where burnin is specified as the number of
@@ -541,7 +541,7 @@ branches by the ‘posterior’. You should end up with a tree similar to
 one displayed in Figure \[fig.figtree\].
 
 <span>![\[fig.figtree\] Figtree representation of the gopher species
-tree.](figures/FigTree "fig:"){width="90.00000%"} </span>
+tree.](figures/FigTree.png "fig:"){width="90.00000%"} </span>
 
 Alternatively, you can load the species tree set `gopher.species.trees`
 into **DensiTree** and visualize it with following
@@ -586,7 +586,7 @@ settings.
 You should now see an image similar to Figure \[fig.DensiTree\].
 
 <span>![\[fig.DensiTree\] DensiTree representation of the species
-tree.](figures/DensiTree "fig:") </span>
+tree.](figures/DensiTree.png "fig:") </span>
 
 **DensiTree** can be used to show the population sizes of
 the each of the trees from `gopher.species.trees` as branch widths.
@@ -604,7 +604,7 @@ as seen in Figure \[fig.DensiTree.part3\].
 
 <span>![\[fig.DensiTree.part3\] DensiTree representation of the
 consensus species tree with population sizes indicated as line
-widths.](figures/species_population3 "fig:") </span>
+widths.](figures/species_population3.pdf "fig:") </span>
 
 Similarly, DensiTree can be used to show the population sizes of the
 summary tree `gopher.species.tre` from TreeAnnotator. Load this file to
@@ -632,10 +632,10 @@ accurate.
 
 <span>![\[fig.DensiTree.part1\] DensiTree representation of the
 consensus species tree from
-TreeAnnotator.](figures/species_population1 "fig:") </span>
+TreeAnnotator.](figures/species_population1.pdf "fig:") </span>
 <span>![\[fig.DensiTree.part1\] DensiTree representation of the
 consensus species tree from
-TreeAnnotator.](figures/species_population2 "fig:") </span>
+TreeAnnotator.](figures/species_population2.pdf "fig:") </span>
 
 Alternatively to TreeAnnotator, a consensus tree can be generated by
 biopy (<https://github.com/jheled/biopy>). An example is shown in Figure
@@ -643,14 +643,14 @@ biopy (<https://github.com/jheled/biopy>). An example is shown in Figure
 the left picture, and 2-norm to obtain the right picture.
 
 <span>![\[fig.DensiTree.part2\] DensiTree representation of the
-consensus species tree from biopy.](figures/species_population4 "fig:")
+consensus species tree from biopy.](figures/species_population4.pdf "fig:")
 </span> <span>![\[fig.DensiTree.part2\] DensiTree representation of the
-consensus species tree from biopy.](figures/species_population5 "fig:")
+consensus species tree from biopy.](figures/species_population5.pdf "fig:")
 </span>
 
 <span>![\[fig.tracerPrior\] Tracer showing the comparison between the
 prior and posterior distribution of the species tree
-height.](figures/Tracer_compareToPrior "fig:"){width="\textwidth"}
+height.](figures/Tracer_compareToPrior.png "fig:"){width="\textwidth"}
 </span>
 
 Comparing your results to the prior
@@ -677,7 +677,7 @@ sequences contain quite a bit of information about this parameter, as
 the posterior moved away from the prior and is much more focused on a
 specific value.
 
-[![image](figures/ccby.pdf)](http://creativecommons.org/licenses/by/4.0/)
+[![image](figures/ccby.pdf)](https://creativecommons.org/licenses/by/4.0/)
 This tutorial was written by Chi Zhang for [Taming the
 BEAST](https://taming-the-beast.github.io) and is licensed under a
 [Creative Commons Attribution 4.0 International
