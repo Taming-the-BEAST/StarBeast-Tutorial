@@ -1,7 +1,7 @@
 ---
 author: Chi Zhang
 level: Professional
-title: *BEAST in BEAST 2.4.x
+title: *BEAST in BEAST 2.4.x Estimating Species Tree from Multilocus Data
 ---
 
 
@@ -75,7 +75,7 @@ BEAUti deletes all previously imported data and starts with a clean
 template. So, if you already loaded some data, a warning message will
 pop up indicating that this data will be lost if you switch templates.
 
-<span>![Figure 1](figures/BEAUti_selectTemplate.png)</span>
+<span>![Figure 1](figures/BEAUti_selectTemplate.png "Fig. 1")</span>
 
 Figure 1: Select a new template in BEAUti.
 
