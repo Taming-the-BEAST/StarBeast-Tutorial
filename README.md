@@ -4,6 +4,7 @@ level: Professional
 title: *BEAST in BEAST 2.4.x
 ---
 
+
 Introduction
 ============
 
@@ -677,7 +678,7 @@ sequences contain quite a bit of information about this parameter, as
 the posterior moved away from the prior and is much more focused on a
 specific value.
 
-[![image](figures/ccby.pdf)](https://creativecommons.org/licenses/by/4.0/)
+[![image](figures/ccby.png)](https://creativecommons.org/licenses/by/4.0/)
 This tutorial was written by Chi Zhang for [Taming the
 BEAST](https://taming-the-beast.github.io) and is licensed under a
 [Creative Commons Attribution 4.0 International
