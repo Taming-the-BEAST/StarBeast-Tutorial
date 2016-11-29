@@ -687,7 +687,7 @@ Figure 18: Tracer showing the comparison between the
 prior and posterior distribution of the species tree
 height.
 
-[![CCBY](figures/ccby.png)]
+![CCBY](figures/ccby.png) 
 This tutorial was written by Chi Zhang for [Taming the
 BEAST](https://taming-the-beast.github.io) and is licensed under a
 [Creative Commons Attribution 4.0 International
