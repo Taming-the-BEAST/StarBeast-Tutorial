@@ -57,13 +57,13 @@
 %%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
-In this tutorial we describe a full Bayesian framework for species tree estimation. The statistical methodology described in this tutorial is known by the acronym *BEAST (pronounced ``star beast'') \cite{Heled:2010fk}.
+In this tutorial we describe a full Bayesian framework for species tree estimation. The statistical methodology described in this tutorial is known by the acronym *BEAST (pronounced ``star beast'') \citep{Heled:2010fk}.
 
 You will need the following software at your disposal:
 
 \begin{itemize}
 
-\item {\bf BEAST} --- this package contains the BEAST program, BEAUti, TreeAnnotator and other utility programs. This tutorial is written for BEAST v{\BEASTVersion}, which has support for multiple partitions. It is available for download from \texttt{http://beast2.org} \cite{beast}.
+\item {\bf BEAST} --- this package contains the BEAST program, BEAUti, TreeAnnotator and other utility programs. This tutorial is written for BEAST v{\BEASTVersion}, which has support for multiple partitions. It is available for download from \texttt{http://beast2.org} \citep{beast}.
 \item {\bf Tracer} --- this program is used to explore the output of BEAST (and other Bayesian MCMC programs). It summarizes graphically and
 quantitively the distributions of continuous parameters and provides diagnostic information for the particular MCMC chain. At the time of
 writing, the current version is v{\TracerVersion}. It is available for download from \\
@@ -75,7 +75,7 @@ BEAST. At the time of writing, the current version is v{\FigTreeVersion}. It is 
 %%%%%%%%%%%%%%%%%%%%%%
 \section{*BEAST analysis}
 
-This tutorial will guide you through the analysis of three loci sampled from 26 individuals representing nine species of pocket gophers. This is a subset of previously published data \cite{belfiore2008multilocus}. The objective of this tutorial is to estimate the species tree that is most probable given the multi-individual multi-locus sequence data. The species tree has nine taxa, whereas each gene tree has 26 taxa. *BEAST 2 will co-estimate three gene trees embedded in a shared species tree (see \cite{Heled:2010fk}, for details).
+This tutorial will guide you through the analysis of three loci sampled from 26 individuals representing nine species of pocket gophers. This is a subset of previously published data \citep{belfiore2008multilocus}. The objective of this tutorial is to estimate the species tree that is most probable given the multi-individual multi-locus sequence data. The species tree has nine taxa, whereas each gene tree has 26 taxa. *BEAST 2 will co-estimate three gene trees embedded in a shared species tree (see \cite{Heled:2010fk} for details).
 
 The first step in the analysis will be to convert a NEXUS file with a DATA or CHARACTERS block into a BEAST XML input file. This is done using the program BEAUti (Bayesian Evolutionary Analysis Utility). This is a user-friendly program for setting the evolutionary model and options for the MCMC analysis. The second step will be to actually run BEAST using the XML input file that contains the data, model and MCMC chain settings. The final step will be to explore the output of BEAST in order to diagnose problems and to summarize the results.
 
@@ -91,7 +91,7 @@ BEAUti uses templates to populate the BEAST XML configuration file with the nece
 
 \begin{figure}[h]
 \centering
-\includeimage[scale=0.4,clip=true,trim=0 550 200 0]{figures/BEAUti_selectTemplate}
+\includeimage[scale=0.4,clip=true,trim=0 600 200 0]{figures/BEAUti_selectTemplate}
 \caption{\label{fig.template} Select a new template in BEAUti.}
 \end{figure}
 
@@ -99,11 +99,9 @@ BEAUti uses templates to populate the BEAST XML configuration file with the nece
 
 \subsubsection{Loading the NEXUS file}
 
-%% JH
 \mlstname{} is a multi-individual, multi-locus method. The data for each
 locus is stored as one alignment in its own NEXUS file. Taxa names in each
 alignment have to be unique, but duplicates across alignments are allowed.
-%% JH
 
 To load a NEXUS format alignment, simply select the {\bf Import
 Alignment} option from the {\bf File} menu. Select three files called \href{https://github.com/CompEvol/beast2/blob/master/examples/nexus/26.nex?raw=true}{26.nex}, \href{https://github.com/CompEvol/beast2/blob/master/examples/nexus/29.nex?raw=true}{29.nex}, \href{https://github.com/CompEvol/beast2/blob/master/examples/nexus/47.nex?raw=true}{47.nex} by holding \texttt{shift} key. 
@@ -112,23 +110,24 @@ Alternatively, click the links above to download the data. After the data is ope
 
 Each file contains an alignment of sequences from an independent locus. The \texttt{26.nex} looks like this (content has been truncated):
 
+{\small
 \begin{verbatim}
 #NEXUS
 [TBO26oLong]
 BEGIN DATA;
-	DIMENSIONS  NTAX =26 NCHAR=614;
-	FORMAT DATATYPE = DNA GAP = - MISSING = ?;
-	MATRIX	
-	Orthogeomys_heterodus        ATTCTAGGCAAAAAGAGCAATGC ...
-	Thomomys_bottae_awahnee_a    ????????????????????ATGCTG ...
-	Thomomys_bottae_awahnee_b    ????????????????????ATGCTG ...
-	Thomomys_bottae_xerophilus   ????????????????????ATGCTG ...
-	Thomomys_bottae_cactophilus  ????????????????AGCAATGCT ...
-         ... ...
-;
+    DIMENSIONS  NTAX =26 NCHAR=614;
+    FORMAT DATATYPE = DNA GAP = - MISSING = ?;
+    MATRIX	
+    Orthogeomys_heterodus        ATTCTAGGCAAAAAGAGCAATGC ...
+    Thomomys_bottae_awahnee_a    ????????????????????ATGCTG ...
+    Thomomys_bottae_awahnee_b    ????????????????????ATGCTG ...
+    Thomomys_bottae_xerophilus   ????????????????????ATGCTG ...
+    Thomomys_bottae_cactophilus  ????????????????AGCAATGCT ...
+    ... ...
+    ;
 END;
 \end{verbatim}
-%\medskip{}
+}
 
 Once loaded, the three partitions are displayed in the main panel.
 You can double click any alignment (partition) to show its detail.
@@ -136,7 +135,7 @@ Figure~\ref{fig.datapartition} shows the way BEAUti looks after loading the appr
 
 \begin{figure}[h]
 \centering
-\includeimage[scale=0.33,clip=true,trim=0 600 0 0]{figures/BEAUti_DataPartitions}
+\includeimage[scale=0.4,clip=true,trim=0 650 0 0]{figures/BEAUti_DataPartitions}
 \caption{\label{fig.datapartition} Data partition panel after loading alignments.}
 \end{figure}
 
@@ -146,14 +145,12 @@ Note that you should only unlink the tree model across data partitions that are 
 
 \subsubsection{Guess or import trait(s) from a mapping file}
 
-%%JH
 Each taxon in a \mlstname{} analysis is associated with a species. Typically, the
 species name is already embedded inside the taxon. The species name should be
 easy to extract; place it either at the beginning or the end, separated by a
 ``special'' character which does not appear in names. For example,
 \texttt{aria\_334259, coast\_343436} (using an underscore) or
 \texttt{10x017b.wrussia, 2x305b.eastis} (using a dot).
-%%JH
 
 We need to tell BEAUti somehow which lineages in the alignments go with taxa in the species tree. Select the {\bf Taxon Set} panel, and a list of taxa from the alignments is shown together with a default guess by BEAUti. In this case, the guess is not very good, so we want to change this. You can either change each of the entries in the table manually, have a mapping stored in a file or have BEAUti guess the taxon names. 
 
@@ -171,7 +168,7 @@ Alternatively, pressing the {\bf Guess} button in BEAUti, a dialog is shown wher
 
 \begin{figure}[h]
 \centering
-\includeimage[width=\textwidth]{figures/BEAUti_Guess_Taxonsets}
+\includeimage[width=0.9\textwidth]{figures/BEAUti_Guess_Taxonsets}
 \caption{\label{fig.taxonset} Selecting taxon sets in BEAUti using the guess dialog from the Taxon set panel.}
 \end{figure}
 
@@ -191,26 +188,24 @@ of the data on the left side of the panel and set up the same substitution model
 
 \begin{figure}[h]
 \centering
-\includeimage[width=\textwidth,clip=true,trim=0 450 0 0]{figures/BEAUti_Site_Model}
+\includeimage[width=0.9\textwidth,clip=true,trim=0 550 0 0]{figures/BEAUti_Site_Model}
 \caption{\label{fig.sitemodel} Setting up substitution and site models for the gopher alignments.}
 \end{figure}
 
-\clearpage
-
 \subsubsection{Setting up the clock model}
-
-Then, click on the {\bf Clock Model} tab at the top of the main window. In this analysis, we use the `Strict Clock' molecular clock model.
-Your model options should now look as displayed in Figure \ref{fig.clockmodel}. 
 
 \begin{figure}[h]
 \centering
-\includeimage[scale=0.3,clip=true,trim=0 550 0 0]{figures/BEAUti_ClockModel1}
+\includeimage[scale=0.4,clip=true,trim=0 700 0 0]{figures/BEAUti_ClockModel1}
 \centering
-\includeimage[scale=0.3,clip=true,trim=0 550 0 0]{figures/BEAUti_ClockModel2}
+\includeimage[scale=0.4,clip=true,trim=0 700 0 0]{figures/BEAUti_ClockModel2}
 \centering
-\includeimage[scale=0.3,clip=true,trim=0 550 0 0]{figures/BEAUti_ClockModel3}
+\includeimage[scale=0.4,clip=true,trim=0 700 0 0]{figures/BEAUti_ClockModel3}
 \caption{\label{fig.clockmodel} Setting up clock models for the gopher alignments.}
 \end{figure}
+
+Then, click on the {\bf Clock Model} tab at the top of the main window. In this analysis, we use the `Strict Clock' molecular clock model.
+Your model options should now look as displayed in Figure \ref{fig.clockmodel}. 
 
 The {\bf estimate} check box is unchecked for the first clock model and checked for the rest clock models, because we wish to estimate the substitution rate of each subsequent locus relative to the first locus whose rate is fixed to 1.0.
 
@@ -225,7 +220,7 @@ The {\bf Ploidy} item determines the type of sequence (mitochondrial, nuclear, X
 
 \begin{figure}[h]
 \centering
-\includeimage[scale=0.32,clip=true,trim=0 350 0 0]{figures/BEAUti_MSP}
+\includeimage[scale=0.4,clip=true,trim=0 400 0 0]{figures/BEAUti_MSP}
 \caption{\label{fig.MSP} Setting up the multi species coalescent model parameters.}
 \end{figure}
 
@@ -247,11 +242,11 @@ The resulting configuration is shown in Figure~\ref{fig.priors}.
 
 \begin{figure}[h]
 \centering
-\includeimage[scale=0.33,clip=true]{figures/BEAUti_settingPriors}
+\includeimage[scale=0.35,clip=true]{figures/BEAUti_settingPriors}
 \caption{\label{fig.priors} Setting up parameter priors.}
 \end{figure}
 
-\clearpage
+%\clearpage
 
 \subsubsection{Operators}
 
@@ -281,7 +276,7 @@ The resulting configuration is shown in Figure~\ref{fig.MCMC}.
 
 \begin{figure}[h]
 \centering
-\includeimage[width=\textwidth]{figures/BEAUti_MCMC}
+\includeimage[width=0.9\textwidth]{figures/BEAUti_MCMC}
 \caption{\label{fig.MCMC} Setting up the MCMC parameters.}
 \end{figure}
 
@@ -292,14 +287,6 @@ these as text files.
 
 We are now ready to create the BEAST XML file. To do this, either select the {\bf File/Save} or {\bf File/Save As} option from the \textbf{File} menu. Save the file with an appropriate name (we usually end the filename with \texttt{.xml}, i.e. \texttt{gopher.xml}). We are now ready to run the file through BEAST. 
 
-\begin{figure}[h]
-\centering
-\includeimage[width=0.45\textwidth]{figures/BEAST2}
-\caption{\label{fig.BEAST} Launching BEAST.}
-\end{figure}
-
-\clearpage
-
 \subsection{BEAST}
 
 Now run BEAST. Provide your newly created XML file as input by clicking \textbf{Choose File ...}, and then click \textbf{Run} (Fig.~\ref{fig.BEAST}).
@@ -309,7 +296,7 @@ reporting information on the screen. The actual result files are
 saved to the disk in the same location as your input file. The output to the screen will
 look something like this: 
 
-{ \tiny   
+{\tiny   
 \begin{verbatim}
                       BEAST v2.4.2, 2002-2016
              Bayesian Evolutionary Analysis Sampling Trees
@@ -400,6 +387,12 @@ End likelihood: -3798.196207797654
 \end{verbatim}
 }
 
+\begin{figure}[h]
+\centering
+\includeimage[width=0.4\textwidth]{figures/BEAST2}
+\caption{\label{fig.BEAST} Launching BEAST.}
+\end{figure}
+
 \section{Analyzing the results}
 
 \subsection{Tracer}
@@ -411,7 +404,7 @@ You should now see a window looking like the snapshot in Figure \ref{fig.tracer1
 
 \begin{figure}[h]
 \centering
-\includeimage[width=\textwidth]{figures/Tracer1}
+\includeimage[width=0.85\textwidth]{figures/Tracer1}
 \caption{\label{fig.tracer1} Tracer with the gopher data.}
 \end{figure}
 
@@ -426,9 +419,11 @@ age of the root for the three gene trees. If you switch the tab at the top of th
 
 \begin{figure}[h]
 \centering
-\includeimage[width=\textwidth]{figures/Tracer2}
+\includeimage[width=0.85\textwidth]{figures/Tracer2}
 \caption{\label{fig.tracer2} Tracer showing the root heights of the lineage trees.}
 \end{figure}
+
+\clearpage
 
 \subsection{TreeAnnotator}
 
@@ -439,7 +434,7 @@ node. Run the TreeAnnotator program and set it up as shown in Figure \ref{fig.Tr
 
 \begin{figure}[h]
 \centering
-\includeimage[width=0.8\textwidth]{figures/TreeAnnotator}
+\includeimage[width=0.6\textwidth]{figures/TreeAnnotator}
 \caption{\label{fig.TreeAnnotator} Using TreeAnnotator to summarise the tree set.}
 \end{figure}
 
@@ -467,7 +462,7 @@ You should end up with a tree similar to one displayed in Figure \ref{fig.figtre
 
 \begin{figure}[h]
 \centering
-\includeimage[width=0.95\textwidth]{figures/FigTree}
+\includeimage[width=0.9\textwidth]{figures/FigTree}
 \caption{\label{fig.figtree} Figtree representation of the gopher species tree.}
 \end{figure}
 
@@ -531,6 +526,14 @@ Alternatively to TreeAnnotator, a consensus tree can be generated by biopy (\url
 \caption{\label{fig.DensiTree.part2} DensiTree representation of the consensus species tree from biopy.}
 \end{figure}
 
+\begin{figure}[h]
+\centering
+\includeimage[width=\textwidth]{figures/Tracer_compareToPrior}
+\caption{\label{fig.tracerPrior} Tracer showing the comparison between the prior and posterior distribution of the species tree height.}
+\end{figure}
+
+\clearpage
+
 \subsection{Comparing your results to the prior}
 
 Using BEAUti, set up the same analysis but under the {\bf MCMC} options, select the {\bf Sample From Prior} option. Re-run the analysis with BEAST. This will allow you to visualize the full prior distribution in the absence of your sequence data. Summarize the trees from the full prior distribution and compare the summary to the posterior summary tree.
@@ -539,11 +542,6 @@ You can also compare the log files from both analyses by loading the log file fr
 
 Figure~\ref{fig.tracerPrior} shows an example of comparing the traces of the species tree height. From the plot we can conclude that the sequences contain quite a bit of information about this parameter, as the posterior moved away from the prior and is much more focused on a specific value.
 
-\begin{figure}[h]
-\centering
-\includeimage[width=\textwidth]{figures/Tracer_compareToPrior}
-\caption{\label{fig.tracerPrior} Tracer showing the comparison between the prior and posterior distribution of the species tree height.}
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%
 % Tutorial disclaimer %
@@ -558,9 +556,6 @@ Figure~\ref{fig.tracerPrior} shows an example of comparing the traces of the spe
 % Do NOT edit this %
 %%%%%%%%%%%%%%%%%%%%
 Version dated: \today
-
-\clearpage
-
 
 
 \printbibliography[heading=relevref]

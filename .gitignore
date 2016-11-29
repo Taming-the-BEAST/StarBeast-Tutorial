@@ -6,3 +6,7 @@ main.bbl
 main.blg
 main-blx.bib
 main.pdf
+main.synctex.gz
+
+Thumbs.db
+.DS_Store
