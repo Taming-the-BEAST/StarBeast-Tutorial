@@ -2,7 +2,6 @@
 author: Chi Zhang
 level: Professional
 title: *BEAST in BEAST 2.4.x
-bibliography: 'tutorial.bib'
 ---
 
 Introduction
@@ -10,7 +9,7 @@ Introduction
 
 In this tutorial we describe a full Bayesian framework for species tree
 estimation. The statistical methodology described in this tutorial is
-known by the acronym \*BEAST (pronounced “star beast”) [@Heled:2010fk].
+known by the acronym \*BEAST (pronounced “star beast”) (`Heled and Drummond 2010`).
 
 You will need the following software at your disposal:
 
@@ -18,7 +17,7 @@ You will need the following software at your disposal:
     BEAUti, TreeAnnotator and other utility programs. This tutorial is
     written for BEAST v2.4.x, which has
     support for multiple partitions. It is available for download from
-    `http://beast2.org` [@beast].
+    `http://beast2.org` (`Bouckaert et al. 2014`).
 
 -   **Tracer** — this program is used to explore the output
     of BEAST (and other Bayesian MCMC programs). It summarizes
@@ -39,12 +38,12 @@ You will need the following software at your disposal:
 
 This tutorial will guide you through the analysis of three loci sampled
 from 26 individuals representing nine species of pocket gophers. This is
-a subset of previously published data [@belfiore2008multilocus]. The
+a subset of previously published data (`Belfiore et al. 2008`). The
 objective of this tutorial is to estimate the species tree that is most
 probable given the multi-individual multi-locus sequence data. The
 species tree has nine taxa, whereas each gene tree has 26 taxa. \*BEAST
 2 will co-estimate three gene trees embedded in a shared species tree
-(see [@Heled:2010fk] for details).
+(see `Heled and Drummond 2010` for details).
 
 The first step in the analysis will be to convert a NEXUS file with a
 DATA or CHARACTERS block into a BEAST XML input file. This is done using
@@ -69,7 +68,7 @@ settings.
 
 \*BEAST uses a non-standard template to generate the analysis XML, which
 means that to use BEAUti for \*BEAST, the first thing to do is to change
-the template. Choose the <span>**File/Template/StarBeast**</span> item
+the template. Choose the **File/Template/StarBeast** item
 (Fig. \[fig.template\]). Keep in mind that when changing a template,
 BEAUti deletes all previously imported data and starts with a clean
 template. So, if you already loaded some data, a warning message will
@@ -85,14 +84,14 @@ stored as one alignment in its own NEXUS file. Taxa names in each
 alignment have to be unique, but duplicates across alignments are
 allowed.
 
-To load a NEXUS format alignment, simply select the <span>**Import
-Alignment**</span> option from the <span>**File**</span> menu. Select
+To load a NEXUS format alignment, simply select the **Import
+Alignment** option from the **File** menu. Select
 three files called
 [26.nex](https://github.com/CompEvol/beast2/blob/master/examples/nexus/26.nex?raw=true),
 [29.nex](https://github.com/CompEvol/beast2/blob/master/examples/nexus/29.nex?raw=true),
 [47.nex](https://github.com/CompEvol/beast2/blob/master/examples/nexus/47.nex?raw=true)
 by holding `shift` key. You can find the files in the
-<span>examples/nexus</span> directory in the directory where BEAST was
+`examples/nexus` directory in the directory where BEAST was
 installed. Alternatively, click the links above to download the data.
 After the data is opened in your web browser each time, right click with
 the mouse and separately save them as `26.nex, 29.nex, 47.nex`.
@@ -125,7 +124,7 @@ alignments.](figures/BEAUti_DataPartitions "fig:") </span>
 
 For multi-locus analyses, BEAST can link or unlink substitutions models
 across the loci by clicking buttons on the top of
-<span>**Partitions**</span> panel. The default of \*BEAST is unlinking
+**Partitions** panel. The default of \*BEAST is unlinking
 all models: substitution model, clock model, and tree models. For this
 tutorial we shall leave all models unlinked.
 
@@ -146,7 +145,7 @@ example, `aria_334259, coast_343436` (using an underscore) or
 `10x017b.wrussia, 2x305b.eastis` (using a dot).
 
 We need to tell BEAUti somehow which lineages in the alignments go with
-taxa in the species tree. Select the <span>**Taxon Set**</span> panel,
+taxa in the species tree. Select the **Taxon Set** panel,
 and a list of taxa from the alignments is shown together with a default
 guess by BEAUti. In this case, the guess is not very good, so we want to
 change this. You can either change each of the entries in the table
@@ -166,7 +165,7 @@ the second column separated by tab. For example:
     taxon3  speciesB
     ... ...
 
-Alternatively, pressing the <span>**Guess**</span> button in BEAUti, a
+Alternatively, pressing the **Guess** button in BEAUti, a
 dialog is shown where you can choose from several ways to try to detect
 the species from the name of the taxon. In our case, splitting the name
 on the underscore character (\_) and selecting the second group will
@@ -179,7 +178,7 @@ panel.](figures/BEAUti_Guess_Taxonsets "fig:"){width="90.00000%"}
 
 ### Setting up the substitution model
 
-The next thing to do is to click on the <span>**Site Model**</span> tab
+The next thing to do is to click on the **Site Model** tab
 at the top of the main window. This will reveal the evolutionary model
 settings for BEAST. Exactly which options appear depends on whether the
 data are nucleotides, amino acids, binary data, or general data. The
@@ -190,8 +189,7 @@ Thus, we have to pick a substitution model that will work better on real
 data than the default JC69. For this analysis, we select each partition
 of the data on the left side of the panel and set up the same
 substitution model for all three partitions: ‘HKY’ for
-<span>**Substitution Model**</span> and ‘Empirical’ for the
-<span>**Frequencies**</span> (Fig. \[fig.sitemodel\]).
+**Substitution Model** and ‘Empirical’ for the **Frequencies** (Fig. \[fig.sitemodel\]).
 
 <span>![\[fig.sitemodel\] Setting up substitution and site models for
 the gopher
@@ -207,33 +205,33 @@ alignments.](figures/BEAUti_ClockModel2 "fig:") </span>
 <span>![\[fig.clockmodel\] Setting up clock models for the gopher
 alignments.](figures/BEAUti_ClockModel3 "fig:") </span>
 
-Then, click on the <span>**Clock Model**</span> tab at the top of the
+Then, click on the **Clock Model** tab at the top of the
 main window. In this analysis, we use the ‘Strict Clock’ molecular clock
 model. Your model options should now look as displayed in Figure
 \[fig.clockmodel\].
 
-The <span>**estimate**</span> check box is unchecked for the first clock
+The **estimate** check box is unchecked for the first clock
 model and checked for the rest clock models, because we wish to estimate
 the substitution rate of each subsequent locus relative to the first
 locus whose rate is fixed to 1.0.
 
 ### Multi Species Coalescent
 
-The <span>**Multi Species Coalescent**</span> panel allows settings of
+The **Multi Species Coalescent** panel allows settings of
 the multi-species coalescent model to be specified. Users can only
 configure the species tree prior, not the gene tree priors, which are
 automatically specified by the multispecies coalescent. Currently, three
-population size models for species tree (under the entry <span>**Pop
-Function**</span>) are available: ‘Continuous-linear and constant root’,
+population size models for species tree (under the entry **Pop
+Function**) are available: ‘Continuous-linear and constant root’,
 ‘Continuous-linear’, and ‘Constant’. In this analysis, since we don’t
 have much information for the population change at the root, we use
 ‘linear and constant root’ model. In \*BEAST, the population sizes are
 assigned gamma priors, and users cannot change the type to a different
 distribution. But the scale parameter of the gamma prior (called
-<span>**Population Mean**</span>) can be assigned a hyperprior (tick
+**Population Mean**) can be assigned a hyperprior (tick
 ‘estimate’, Fig. \[fig.MSP\]).
 
-The <span>**Ploidy**</span> item determines the type of sequence
+The **Ploidy** item determines the type of sequence
 (mitochondrial, nuclear, X, Y). This matters since different modes of
 inheritance give rise to different effective population sizes, for
 example in the case of mitochondrial DNA we would only deal with the
@@ -246,7 +244,7 @@ parameters.](figures/BEAUti_MSP "fig:") </span>
 
 ### Priors
 
-The <span>**Priors**</span> panel allows priors for each parameter in
+The **Priors** panel allows priors for each parameter in
 the model to be specified.
 
 Several models are available as species tree priors, however, only the
@@ -258,17 +256,17 @@ The default priors that BEAST sets for other parameters would allow the
 analysis to work. However, some of these are inappropriate for this
 analysis. Therefore change the priors as follows:
 
--   <span>**birthRate.t:Species**</span>: set the prior to ‘Log Normal’
+-   **birthRate.t:Species**: set the prior to ‘Log Normal’
     with M of $4.0$ and S of $1.25$;
 
--   <span>**popMean**</span> (scale parameter of the gamma priors for
+-   **popMean** (scale parameter of the gamma priors for
     population sizes): set the prior to ‘Log Normal’ with M of $-5.0$
     and S of $1.25$;
 
--   <span>**clockRate.c:29**</span>: set the prior to ‘Exponential’ with
+-   **clockRate.c:29**: set the prior to ‘Exponential’ with
     mean $1.0$;
 
--   <span>**clockRate.c:45**</span>: set the prior to ‘Exponential’ with
+-   **clockRate.c:45**: set the prior to ‘Exponential’ with
     mean $1.0$.
 
 The resulting configuration is shown in Figure \[fig.priors\].
@@ -278,19 +276,19 @@ priors.](figures/BEAUti_settingPriors "fig:") </span>
 
 ### Operators
 
-The <span>**Operators**</span> panel (normally hidden) is used to
+The **Operators** panel (normally hidden) is used to
 configure technical settings that affect the efficiency of the MCMC
 program. In MCMC the operators define which values will be proposed for
 the next step in the chain given the current state. You can take a look
-at them if you go to <span>**View/Show Operators panel**</span>, but do
+at them if you go to **View/Show Operators panel**, but do
 not edit the settings.
 
 ### Setting the MCMC options
 
-The next tab, <span>**MCMC**</span>, provides more general settings to
+The next tab, **MCMC**, provides more general settings to
 control the length of the MCMC and the file names.
 
-First, we need to set the <span>**Chain Length**</span>. This is the
+First, we need to set the **Chain Length**. This is the
 number of steps the MCMC will make in the chain before finishing. The
 appropriate length of the chain depends on the size of the dataset, the
 complexity of the model and the accuracy of the answer required. The
@@ -311,13 +309,13 @@ extra benefit in terms of the precision of the analysis. Sample too
 infrequently and the log file will not contain much information about
 the distributions of the parameters. You probably want to aim to store
 no more than 10,000 samples so the log frequency should be set to no
-less than <span><span>5,000,000</span></span> / 10,000 = 500.
+less than 5,000,000 / 10,000 = 500.
 
-For this exercise we will set the the <span>**tracelog**</span> to and
-the <span>**screenlog**</span> to . Set the file name of the
-<span>**tracelog**</span> to `gopher.log`, that of the
-<span>**speciesTreeLogger**</span> to `gopher.species.trees`, and that
-of the <span>**treelog.t:26, treelog.t:29, treelog.t:47**</span> to
+For this exercise we will set the the **tracelog** to and
+the **screenlog** to . Set the file name of the
+**tracelog** to `gopher.log`, that of the
+**speciesTreeLogger** to `gopher.species.trees`, and that
+of the **treelog.t:26, treelog.t:29, treelog.t:47** to
 `gopher.gene$(tree).trees`.
 
 The resulting configuration is shown in Figure \[fig.MCMC\].
@@ -333,7 +331,7 @@ recognizes these as text files.
 ### Generating the BEAST XML file 
 
 We are now ready to create the BEAST XML file. To do this, either select
-the <span>**File/Save**</span> or <span>**File/Save As**</span> option
+the **File/Save** or **File/Save As** option
 from the **File** menu. Save the file with an appropriate name (we
 usually end the filename with `.xml`, i.e. `gopher.xml`). We are now
 ready to run the file through BEAST.
@@ -445,9 +443,9 @@ Analyzing the results
 Tracer
 ------
 
-Run the program called <span>**Tracer**</span> to analyze the output of
-BEAST. When the main window has opened, choose <span>**Import Trace
-File...**</span> from the <span>**File**</span> menu and select the file
+Run the program called **Tracer** to analyze the output of
+BEAST. When the main window has opened, choose **Import Trace
+File...** from the **File** menu and select the file
 that BEAST has created called `gopher.log`. You should now see a window
 looking like the snapshot in Figure \[fig.tracer1\].
 
@@ -468,15 +466,15 @@ tab (top window on the right-hand side).
 
 Tracer will plot a (marginal posterior) distribution for the selected
 parameter and also give you statistics such as the mean and median. The
-`95% HPD lower` or `upper` stands for <span>*highest posterior density
-interval*</span> and represents the most compact interval on the
+`95% HPD lower` or `upper` stands for *highest posterior density
+interval* and represents the most compact interval on the
 selected parameter that contains 95% of the posterior probability. It
 can be thought of as a Bayesian analog to a confidence interval.
 
 Select the three ‘TreeHeight’ traces (hold `shift` key while selecting).
 This will display the age of the root for the three gene trees. If you
 switch the tab at the top of the window on the right-hand side to
-<span>**Marginal Prob Distribution**</span> then you will get a plot of
+**Marginal Prob Distribution** then you will get a plot of
 the marginal posterior densities of each of these date estimates
 overlayed (Fig. \[fig.tracer2\]).
 
@@ -487,7 +485,7 @@ TreeAnnotator
 -------------
 
 BEAST also produces a sample of plausible trees. These can be summarized
-using the program <span>**TreeAnnotator**</span>. This program will take
+using the program **TreeAnnotator**. This program will take
 the set of trees and identify a single tree that best represents the
 posterior distribution. It will then annotate this selected tree
 topology with the mean ages of all the nodes as well as the 95% HPD
@@ -505,19 +503,19 @@ steps, in TreeAnnotator you need to specify the percentage of trees
 discarded. For this run, we set the burnin to 10 (i.e. we remove first
 10% of the trees).
 
-The <span>**Posterior probability limit**</span> option specifies a
+The **Posterior probability limit** option specifies a
 limit such that if a node is found at less than this frequency in the
 sample of trees (i.e., has a posterior probability less than this
 limit), it will not be annotated. Setting this to zero will annotate all
 nodes. For this analysis, set it to 0.5. This means that only the nodes
 seen in the majority of trees will be annotated.
 
-For <span>**Target tree type**</span> you can either choose a specific
+For **Target tree type** you can either choose a specific
 tree from a file or ask TreeAnnotator to find a tree in your sample. The
 default option, ‘Maximum clade credibility tree’, finds the tree with
 the highest product of the posterior probability of all its nodes.
 
-Choose ‘Median heights’ for <span>**Node Heights**</span>. This sets the
+Choose ‘Median heights’ for **Node Heights**. This sets the
 heights (ages) of each node in the tree to the median height across the
 entire sample of trees for that clade.
 
@@ -525,20 +523,20 @@ For the input file, select the trees file that BEAST created (in this
 tutorial this was the `gopher.species.trees`) and select a file for the
 output (here we called it `gopher.species.tre`).
 
-Now press <span>**Run**</span> and wait for the program to finish.
+Now press **Run** and wait for the program to finish.
 
 Viewing the species tree
 ------------------------
 
 Finally, we can look at the tree in another program called
-<span>**FigTree**</span>. Run this program, and open the
-`gopher.species.tre` file by using the <span>**Open**</span> command in
-the <span>**File**</span> menu. The tree should appear. You can now try
+**FigTree**. Run this program, and open the
+`gopher.species.tre` file by using the **Open** command in
+the **File** menu. The tree should appear. You can now try
 selecting some of the options in the control panel on the left. Tick the
-<span>**Node Bars**</span> and try to get node age error bars. Also turn
-on <span>**Branch Labels**</span> and select ‘posterior’ to get it to
+**Node Bars** and try to get node age error bars. Also turn
+on **Branch Labels** and select ‘posterior’ to get it to
 display the posterior probability for each node. Under
-<span>**Appearance**</span> you can also tell FigTree to colour the
+**Appearance** you can also tell FigTree to colour the
 branches by the ‘posterior’. You should end up with a tree similar to
 one displayed in Figure \[fig.figtree\].
 
@@ -546,34 +544,34 @@ one displayed in Figure \[fig.figtree\].
 tree.](figures/FigTree "fig:"){width="90.00000%"} </span>
 
 Alternatively, you can load the species tree set `gopher.species.trees`
-into <span>**DensiTree**</span> and visualize it with following
+into **DensiTree** and visualize it with following
 settings.
 
 -   Perhaps, the intensity of the individual trees is not high enough,
     so you might want to increase it by clicking the icon
-    <span>**Increase Intensity of Trees**</span> in the button bar at
+    **Increase Intensity of Trees** in the button bar at
     the top. The text for each button shows when you hover over it.
 
--   Set <span>**Burn in**</span> to 500 trees. If before you had a
+-   Set **Burn in** to 500 trees. If before you had a
     collapsed trees, after this setting the tree should not be
     collapsed anymore.
 
--   <span>**Show**</span> a root-canal tree to better guide the eye over
+-   **Show** a root-canal tree to better guide the eye over
     the set of trees.
 
--   In <span>**Clades**</span> menu, select <span>**Show clades**</span>
+-   In **Clades** menu, select **Show clades**
     and display their mean and 95% HPD graphically, and posterior
     support using text. By default you may not be able to select the
-    <span>**Show clades**</span> option. If that is the case, first
-    click on the icon <span>**Central**</span> in the top right corner
+    **Show clades** option. If that is the case, first
+    click on the icon **Central** in the top right corner
     of the window.
 
     You can see that there is information for too many clades
     being displayed. As most clades have very little support, they are
     not of interest and we would like to stop visualizing the
-    information for those. Tick <span>**Selected only**</span>, then
-    open the clade toolbar (menu <span>**Window/View clade
-    toolbar**</span>), and select only highly supported clades (hold
+    information for those. Tick **Selected only**, then
+    open the clade toolbar (menu **Window/View clade
+    toolbar**), and select only highly supported clades (hold
     down the `shift` key to select several clades at a time). Also,
     select the clade consisting of heterodus, bottae, umbinus and
     townsendii, to show that heterodus is an outgroup of the tree, but
@@ -583,16 +581,16 @@ settings.
     that the 95% HPD bar does not overlap with the one for mazama,
     monticola, idahoensis and talpoidis. Increase font size of the label
     for better readability (i.e. change the
-    <span>**Label**</span> options).
+    **Label** options).
 
 You should now see an image similar to Figure \[fig.DensiTree\].
 
 <span>![\[fig.DensiTree\] DensiTree representation of the species
 tree.](figures/DensiTree "fig:") </span>
 
-<span>**DensiTree**</span> can be used to show the population sizes of
+**DensiTree** can be used to show the population sizes of
 the each of the trees from `gopher.species.trees` as branch widths.
-Under <span>**Line Width**</span>, select ‘BY\_METADATA\_PATTERN’
+Under **Line Width**, select ‘BY\_METADATA\_PATTERN’
 option, for both upper and lower spinners and use
 
      .*dmv=.(^,*).*
@@ -610,14 +608,14 @@ widths.](figures/species_population3 "fig:") </span>
 
 Similarly, DensiTree can be used to show the population sizes of the
 summary tree `gopher.species.tre` from TreeAnnotator. Load this file to
-DensiTree and explore the options in the spinners under <span>**Line
-Width**</span>. Notice, that dmt stands for “demographic times", dmv for
+DensiTree and explore the options in the spinners under **Line
+Width**. Notice, that dmt stands for “demographic times", dmv for
 “demographic values". These are the population parameters that are
 estimated for each node in the tree. With the continous-linear
 population size model, the first value dmv1 is the population size at
 the branch start and the second dmv2 is the population size at the
 branch end; where start and end are relative to going
-<span>*backwards*</span> in time, that is start is the more recent time,
+*backwards* in time, that is start is the more recent time,
 end the more ancient.
 
 Choose ‘dmv1’ for the upper (start/bottom of a branch) and ‘dmv2’ for
@@ -659,8 +657,8 @@ Comparing your results to the prior
 -----------------------------------
 
 Using BEAUti, set up the same analysis but under the
-<span>**MCMC**</span> options, select the <span>**Sample From
-Prior**</span> option. Re-run the analysis with BEAST. This will allow
+**MCMC** options, select the **Sample From
+Prior** option. Re-run the analysis with BEAST. This will allow
 you to visualize the full prior distribution in the absence of your
 sequence data. Summarize the trees from the full prior distribution and
 compare the summary to the posterior summary tree.
@@ -684,3 +682,16 @@ This tutorial was written by Chi Zhang for [Taming the
 BEAST](https://taming-the-beast.github.io) and is licensed under a
 [Creative Commons Attribution 4.0 International
 License](http://creativecommons.org/licenses/by/4.0/).
+
+Relevant References
+-------------------
+
+Belfiore N, L Liu, and C Moritz. 2008. Multilocus phylogenetics of a rapid radiation 
+in the genus Thomomys (Rodentia: Geomyidae). Systematic Biology 57: 294. 
+
+Bouckaert RR, J Heled, D Kühnert, T Vaughan, C-H Wu, D Xie, MA Suchard, A Rambaut, 
+and AJ Drummond. 2014. BEAST 2: a software platform for Bayesian evolutionary analysis. 
+PLoS Comput Biol 10: e1003537.
+
+Heled J and AJ Drummond. 2010. Bayesian inference of species trees from multilocus data. 
+Mol Biol Evol 27: 570-80.
