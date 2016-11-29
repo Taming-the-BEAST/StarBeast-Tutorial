@@ -613,7 +613,7 @@ for the upper (start of the branch) pattern and
 for the lower (end of the branch) pattern. This gives us visualisation
 as seen in Figure 15.
 
-![Figure 15](figures/species_population.png) 
+![Figure 15](figures/Species_population3.png) 
 
 Figure 15: DensiTree representation of the
 consensus species tree with population sizes indicated as line widths.
@@ -642,7 +642,7 @@ branch above (more ancestral), using the ‘Make fit to bottom’ option for
 the lower spinner. This looks a bit prettier, but may not be quite
 accurate.
 
-![Figure 16](figures/species_population1.png)
+![Figure 16](figures/Species_population1.png)
 
 Figure 16: DensiTree representation of the
 consensus species tree from TreeAnnotator.
@@ -652,7 +652,7 @@ biopy (<https://github.com/jheled/biopy>). An example is shown in Figure
 17 where 1-norm option has been applied to generate
 the left picture, and 2-norm to obtain the right picture.
 
-![Figure 17](figures/species_population2.png)
+![Figure 17](figures/Species_population2.png)
 
 Figure 17: DensiTree representation of the
 consensus species tree from biopy.
