@@ -75,8 +75,9 @@ BEAUti deletes all previously imported data and starts with a clean
 template. So, if you already loaded some data, a warning message will
 pop up indicating that this data will be lost if you switch templates.
 
-<span>![Figure 1: Select a new template in
-BEAUti.](figures/BEAUti_selectTemplate.png)</span>
+<span>![Figure 1](figures/BEAUti_selectTemplate.png)</span>
+
+Figure 1: Select a new template in BEAUti.
 
 ### Loading the NEXUS file
 
@@ -120,8 +121,9 @@ can double click any alignment (partition) to show its detail.
 Figure 2 shows the way BEAUti looks after loading
 the appropriate alignments.
 
-<span>![Figure 2: Data partition panel after loading
-alignments.](figures/BEAUti_DataPartitions.png)</span>
+<span>![Figure 2](figures/BEAUti_DataPartitions.png)</span>
+
+Figure 2: Data partition panel after loading alignments.
 
 For multi-locus analyses, BEAST can link or unlink substitutions models
 across the loci by clicking buttons on the top of
@@ -172,8 +174,10 @@ the species from the name of the taxon. In our case, splitting the name
 on the underscore character (\_) and selecting the second group will
 give us the mapping that we need (Fig. 3).
 
-<span>![Figure 3: Selecting taxon sets in BEAUti using the guess
-dialog from the Taxon set panel.](figures/BEAUti_Guess_Taxonsets.png)</span>
+<span>![Figure 3](figures/BEAUti_Guess_Taxonsets.png)</span>
+
+Figure 3: Selecting taxon sets in BEAUti using the guess
+dialog from the Taxon set panel.
 
 ### Setting up the substitution model
 
@@ -190,8 +194,10 @@ of the data on the left side of the panel and set up the same
 substitution model for all three partitions: ‘HKY’ for
 **Substitution Model** and ‘Empirical’ for the **Frequencies** (Fig. 4).
 
-<span>![Figure 4: Setting up substitution and site models for
-the gopher alignments.](figures/BEAUti_Site_Model.png)</span>
+<span>![Figure 4](figures/BEAUti_Site_Model.png)</span>
+
+Figure 4: Setting up substitution and site models for
+the gopher alignments.
 
 ### Setting up the clock model
 
@@ -202,6 +208,7 @@ model. Your model options should now look as displayed in Figure 5.
 <span>![5.1](figures/BEAUti_ClockModel1.png)</span>
 <span>![5.2](figures/BEAUti_ClockModel2.png)</span>
 <span>![5.3](figures/BEAUti_ClockModel3.png)</span>
+
 Figure5: Setting up clock models for the gopher alignments.
 
 The **estimate** check box is unchecked for the first clock
@@ -233,8 +240,9 @@ half of the available population, since this type of DNA is only passed
 on by the mother. In the case of this analysis the data is autosomal
 nuclear, which is the default option (Fig. 6).
 
-<span>![Figure 6: Setting up the multi species coalescent model
-parameters.](figures/BEAUti_MSP.png)</span>
+<span>![Figure 6](figures/BEAUti_MSP.png)</span>
+
+Figure 6: Setting up the multi species coalescent model parameters.
 
 ### Priors
 
@@ -265,8 +273,9 @@ analysis. Therefore change the priors as follows:
 
 The resulting configuration is shown in Figure 7.
 
-<span>![Figure 7: Setting up parameter
-priors.](figures/BEAUti_settingPriors.png)</span>
+<span>![Figure 7](figures/BEAUti_settingPriors.png)</span>
+
+Figure 7: Setting up parameter priors.
 
 ### Operators
 
@@ -314,8 +323,9 @@ of the **treelog.t:26, treelog.t:29, treelog.t:47** to
 
 The resulting configuration is shown in Figure 8.
 
-<span>![Figure 8: Setting up the MCMC
-parameters.](figures/BEAUti_MCMC.png)</span>
+<span>![Figure 8](figures/BEAUti_MCMC.png)</span>
+
+Figure 8: Setting up the MCMC parameters.
 
 If you are using Windows then we suggest you add the suffix `.txt` to
 both of these files (i.e. to specify output file names to
@@ -336,7 +346,9 @@ BEAST
 Now run BEAST. Provide your newly created XML file as input by clicking
 **Choose File ...**, and then click **Run** (Fig. 9).
 
-<span>![Figure 9: Launching BEAST.](figures/BEAST2.png)</span>
+<span>![Figure 9](figures/BEAST2.png)</span>
+
+Figure 9: Launching BEAST.
 
 BEAST will then run until the specified chain length is reached, and
 until it has finished reporting information on the screen. The actual
@@ -442,7 +454,9 @@ File...** from the **File** menu and select the file
 that BEAST has created called `gopher.log`. You should now see a window
 looking like the snapshot in Figure 10.
 
-<span>![Figure 10: Tracer with the gopher data.](figures/Tracer1.png)</span>
+<span>![Figure 10](figures/Tracer1.png)</span>
+
+Figure 10: Tracer with the gopher data.
 
 Remember that MCMC is a stochastic algorithm so the actual numbers will
 not be exactly the same.
@@ -470,8 +484,9 @@ switch the tab at the top of the window on the right-hand side to
 the marginal posterior densities of each of these date estimates
 overlayed (Fig. 11).
 
-<span>![Figure 11: Tracer showing the root heights of the lineage
-trees.](figures/Tracer2.png)</span>
+<span>![Figure 11](figures/Tracer2.png)</span>
+
+Figure 11: Tracer showing the root heights of the lineage trees.
 
 TreeAnnotator
 -------------
@@ -485,8 +500,9 @@ interval of divergence times for each clade in the selected tree. It
 will also calculate the posterior clade probability for each node. Run
 the TreeAnnotator program and set it up as shown in Figure 12.
 
-<span>![Figure 12: Using TreeAnnotator to summarise the tree
-set.](figures/TreeAnnotator.png)</span>
+<span>![Figure 12](figures/TreeAnnotator.png)</span>
+
+Figure 12: Using TreeAnnotator to summarise the tree set.
 
 The burnin is the number of trees to remove from the start of the
 sample. Unlike in Tracer where burnin is specified as the number of
@@ -531,8 +547,9 @@ display the posterior probability for each node. Under
 branches by the ‘posterior’. You should end up with a tree similar to
 one displayed in Figure 13.
 
-<span>![Figure 13: Figtree representation of the gopher species
-tree.](figures/FigTree.png)</span>
+<span>![Figure 13](figures/FigTree.png)</span>
+
+Figure 13: Figtree representation of the gopher species tree.
 
 Alternatively, you can load the species tree set `gopher.species.trees`
 into **DensiTree** and visualize it with following
@@ -576,8 +593,9 @@ settings.
 
 You should now see an image similar to Figure 14.
 
-<span>![Figure 14: DensiTree representation of the species
-tree.](figures/DensiTree.png) </span>
+<span>![Figure 14](figures/DensiTree.png) </span>
+
+Figure 14: DensiTree representation of the species tree.
 
 **DensiTree** can be used to show the population sizes of
 the each of the trees from `gopher.species.trees` as branch widths.
@@ -593,9 +611,10 @@ for the upper (start of the branch) pattern and
 for the lower (end of the branch) pattern. This gives us visualisation
 as seen in Figure 15.
 
-<span>![Figure 15: DensiTree representation of the
-consensus species tree with population sizes indicated as line
-widths.](figures/species_population3.png) </span>
+<span>![Figure 15](figures/species_population3.png) </span>
+
+Figure 15: DensiTree representation of the
+consensus species tree with population sizes indicated as line widths.
 
 Similarly, DensiTree can be used to show the population sizes of the
 summary tree `gopher.species.tre` from TreeAnnotator. Load this file to
@@ -621,8 +640,9 @@ branch above (more ancestral), using the ‘Make fit to bottom’ option for
 the lower spinner. This looks a bit prettier, but may not be quite
 accurate.
 
-<span>![](figures/species_population1.png)</span>
-<span>![](figures/species_population2.png)</span>
+<span>![16.1](figures/species_population1.png)</span>
+<span>![16.2](figures/species_population2.png)</span>
+
 Figure 16: DensiTree representation of the
 consensus species tree from TreeAnnotator.
 
@@ -631,8 +651,9 @@ biopy (<https://github.com/jheled/biopy>). An example is shown in Figure
 17 where 1-norm option has been applied to generate
 the left picture, and 2-norm to obtain the right picture.
 
-<span>![](figures/species_population4.png)</span>
-<span>![](figures/species_population5.png)</span>
+<span>![17.1](figures/species_population4.png)</span>
+<span>![17.2](figures/species_population5.png)</span>
+
 Figure 17: DensiTree representation of the
 consensus species tree from biopy.
 
@@ -660,11 +681,13 @@ sequences contain quite a bit of information about this parameter, as
 the posterior moved away from the prior and is much more focused on a
 specific value.
 
-<span>![Figure 18: Tracer showing the comparison between the
-prior and posterior distribution of the species tree
-height.](figures/Tracer_compareToPrior.png)</span>
+<span>![Figure 18](figures/Tracer_compareToPrior.png)</span>
 
-[![image](figures/ccby.png)](https://creativecommons.org/licenses/by/4.0/)
+Figure 18: Tracer showing the comparison between the
+prior and posterior distribution of the species tree
+height.
+
+[![ccby](figures/ccby.png)](https://creativecommons.org/licenses/by/4.0/)
 This tutorial was written by Chi Zhang for [Taming the
 BEAST](https://taming-the-beast.github.io) and is licensed under a
 [Creative Commons Attribution 4.0 International
