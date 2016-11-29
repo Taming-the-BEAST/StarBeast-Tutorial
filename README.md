@@ -1,7 +1,8 @@
 ---
 author: Chi Zhang
 level: Professional
-title: \*BEAST in BEAST 2.4.x
+title: *BEAST in BEAST 2.4.x
+bibliography: 'tutorial.bib'
 ---
 
 Introduction
@@ -13,25 +14,25 @@ known by the acronym \*BEAST (pronounced “star beast”) [@Heled:2010fk].
 
 You will need the following software at your disposal:
 
--   <span>**BEAST**</span> — this package contains the BEAST program,
+-   **BEAST** — this package contains the BEAST program,
     BEAUti, TreeAnnotator and other utility programs. This tutorial is
-    written for BEAST v<span><span>2.4.x</span></span>, which has
+    written for BEAST v2.4.x, which has
     support for multiple partitions. It is available for download from
     `http://beast2.org` [@beast].
 
--   <span>**Tracer**</span> — this program is used to explore the output
+-   **Tracer** — this program is used to explore the output
     of BEAST (and other Bayesian MCMC programs). It summarizes
     graphically and quantitively the distributions of continuous
     parameters and provides diagnostic information for the particular
     MCMC chain. At the time of writing, the current version is
-    v<span><span>1.6</span></span>. It is available for download from\
-    `http://tree.bio.ed.ac.uk/software/tracer` .
+    v1.6. It is available for download from\
+    `http://tree.bio.ed.ac.uk/software/tracer`.
 
--   <span>**FigTree**</span> — this is an application for displaying and
+-   **FigTree** — this is an application for displaying and
     printing molecular phylogenies, in particular those obtained
     using BEAST. At the time of writing, the current version is
-    v<span><span>1.4.2</span></span>. It is available for download from
-    `http://tree.bio.ed.ac.uk/software/figtree` .
+    v1.4.2. It is available for download from
+    `http://tree.bio.ed.ac.uk/software/figtree`.
 
 \*BEAST analysis
 ================
