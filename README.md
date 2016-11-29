@@ -4,11 +4,10 @@ level: Professional
 ---
 
 
-# *BEAST in BEAST 2.4.x: Estimating Species Tree from Multilocus Data
+# *BEAST in BEAST 2.4.x
+# Estimating Species Tree from Multilocus Data
 
 Joseph Heled, Remco Bouckaert, Walter Xie and Alexei J Drummond
-
-modified by Chi Zhang
 
 
 Introduction
