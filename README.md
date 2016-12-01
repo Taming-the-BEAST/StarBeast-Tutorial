@@ -261,17 +261,17 @@ analysis to work. However, some of these are inappropriate for this
 analysis. Therefore change the priors as follows:
 
 -   **birthRate.t:Species**: set the prior to ‘Log Normal’
-    with M of $4.0$ and S of $1.25$;
+    with M of 4.0 and S of 1.25;
 
 -   **popMean** (scale parameter of the gamma priors for
-    population sizes): set the prior to ‘Log Normal’ with M of $-5.0$
-    and S of $1.25$;
+    population sizes): set the prior to ‘Log Normal’ with M of -5.0
+    and S of 1.25;
 
 -   **clockRate.c:29**: set the prior to ‘Exponential’ with
-    mean $1.0$;
+    mean 1.0;
 
 -   **clockRate.c:45**: set the prior to ‘Exponential’ with
-    mean $1.0$.
+    mean 1.0.
 
 The resulting configuration is shown in Figure 7.
 
@@ -585,7 +585,7 @@ settings.
     down the `shift` key to select several clades at a time). Also,
     select the clade consisting of heterodus, bottae, umbinus and
     townsendii, to show that heterodus is an outgroup of the tree, but
-    there is some support ($\sim$ 17%) that it is not.
+    there is some support (~ 17%) that it is not.
 
 -   Drag the clade monticola and idahoensis up in the displayed tree so
     that the 95% HPD bar does not overlap with the one for mazama,
