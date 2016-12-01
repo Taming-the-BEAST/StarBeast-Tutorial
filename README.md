@@ -540,6 +540,9 @@ height.</figcaption>
 [Figure 18](#fig.tracerPrior) shows an example of comparing the traces of the species tree height. From the plot we can conclude that the sequences contain quite a bit of information about this parameter, as the posterior moved away from the prior and is much more focused on a specific value.
 
 
+----
+
+The content of this tutorial is based on the [*BEAST in BEAST 2.0](https://github.com/CompEvol/beast2/blob/master/doc/tutorials/STARBEAST/StarBEASTTutorialv2.0.3.pdf?raw=true) tutorial by Joseph Heled, Remco Bouckaert, Alexei J. Drummond and Walter Xie. 
 
 ----
 
