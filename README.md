@@ -111,8 +111,7 @@ Alternatively, pressing the **Guess** button in BEAUti, a dialog is shown where 
 <figure>
 	<a id="fig.taxonset"></a>
 	<img style="width:75.0%;" src="figures/BEAUti_Guess_Taxonsets.png" alt="">
-	<figcaption>Figure 3: Selecting taxon sets in BEAUti using the guess
-dialog from the Taxon set panel.</figcaption>
+	<figcaption>Figure 3: Selecting taxon sets in BEAUti using the guess dialog from the Taxon set panel.</figcaption>
 </figure>
 <br>
 
@@ -128,8 +127,7 @@ For this analysis, we select each partition of the data on the left side of the 
 <figure>
 	<a id="fig.sitemodel"></a>
 	<img style="width:90.0%;" src="figures/BEAUti_Site_Model.png" alt="">
-	<figcaption>Figure 4: Setting up substitution and site models for
-the gopher alignments.</figcaption>
+	<figcaption>Figure 4: Setting up substitution and site models for the gopher alignments.</figcaption>
 </figure>
 <br>
 
@@ -142,8 +140,7 @@ Your model options should now look as displayed in [Figure 5](#fig.clockmodel).
 <figure>
 	<a id="fig.clockmodel"></a>
 	<img style="width:90.0%;" src="figures/BEAUti_ClockModel.png" alt="">
-	<figcaption>Figure5: Setting up clock models for the gopher alignments.
-</figcaption>
+	<figcaption>Figure5: Setting up clock models for the gopher alignments.</figcaption>
 </figure>
 <br>
 
@@ -161,8 +158,7 @@ The **Ploidy** item determines the type of sequence (mitochondrial, nuclear, X, 
 <figure>
 	<a id="fig.MSP"></a>
 	<img style="width:90.0%;" src="figures/BEAUti_MSP.png" alt="">
-	<figcaption>Figure 6: Setting up the multi species coalescent model parameters.
-</figcaption>
+	<figcaption>Figure 6: Setting up the multi species coalescent model parameters.</figcaption>
 </figure>
 <br>
 
@@ -185,8 +181,7 @@ The resulting configuration is shown in [Figure 7](#fig.priors).
 <figure>
 	<a id="fig.priors"></a>
 	<img style="width:75.0%;" src="figures/BEAUti_settingPriors.png" alt="">
-	<figcaption>Figure 7: Setting up parameter priors.
-</figcaption>
+	<figcaption>Figure 7: Setting up parameter priors.</figcaption>
 </figure>
 <br>
 
@@ -214,8 +209,7 @@ The resulting configuration is shown in [Figure 8](#fig.MCMC).
 <figure>
 	<a id="fig.MCMC"></a>
 	<img style="width:90.0%;" src="figures/BEAUti_MCMC.png" alt="">
-	<figcaption>Figure 8: Setting up the MCMC parameters.
-</figcaption>
+	<figcaption>Figure 8: Setting up the MCMC parameters.</figcaption>
 </figure>
 <br>
 
@@ -235,8 +229,7 @@ BEAST will then run until the specified chain length is reached, and until it ha
 <figure>
 	<a id="fig.BEAST"></a>
 	<img style="width:40.0%;" src="figures/BEAST2.png" alt="">
-	<figcaption>Figure 9: Launching BEAST.
-</figcaption>
+	<figcaption>Figure 9: Launching BEAST.</figcaption>
 </figure>
 <br>
 
@@ -344,8 +337,7 @@ You should now see a window looking like the snapshot in [Figure 10](#fig.tracer
 <figure>
 	<a id="fig.tracer1"></a>
 	<img style="width:85.0%;" src="figures/Tracer1.png" alt="">
-	<figcaption>Figure 10: Tracer with the gopher data.
-</figcaption>
+	<figcaption>Figure 10: Tracer with the gopher data.</figcaption>
 </figure>
 <br>
 
@@ -362,8 +354,7 @@ age of the root for the three gene trees. If you switch the tab at the top of th
 <figure>
 	<a id="fig.tracer2"></a>
 	<img style="width:85.0%;" src="figures/Tracer2.png" alt="">
-	<figcaption>Figure 11: Tracer showing the root heights of the lineage trees.
-</figcaption>
+	<figcaption>Figure 11: Tracer showing the root heights of the lineage trees.</figcaption>
 </figure>
 <br>
 
@@ -376,8 +367,7 @@ These can be summarized using the program **TreeAnnotator**. This program will t
 <figure>
 	<a id="fig.TreeAnnotator"></a>
 	<img style="width:60.0%;" src="figures/TreeAnnotator.png" alt="">
-	<figcaption>Figure 12: Using TreeAnnotator to summarise the tree set.
-</figcaption>
+	<figcaption>Figure 12: Using TreeAnnotator to summarise the tree set.</figcaption>
 </figure>
 <br>
 
@@ -426,8 +416,7 @@ You should now see an image similar to [Figure 14](#fig.DensiTree).
 <figure>
 	<a id="fig.DensiTree"></a>
 	<img style="width:90.0%;" src="figures/DensiTree.png" alt="">
-	<figcaption>Figure 14: DensiTree representation of the species tree.
-</figcaption>
+	<figcaption>Figure 14: DensiTree representation of the species tree.</figcaption>
 </figure>
 <br>
 
@@ -440,9 +429,7 @@ This gives us visualisation as seen in [Figure 15](#fig.DensiTree.part3).
 <figure>
 	<a id="fig.DensiTree.part3"></a>
 	<img style="width:60.0%;" src="figures/Species_population3.png" alt="">
-	<figcaption>Figure 15: DensiTree representation of the
-consensus species tree with population sizes indicated as line widths.
-</figcaption>
+	<figcaption>Figure 15: DensiTree representation of the consensus species tree with population sizes indicated as line widths.</figcaption>
 </figure>
 <br>
 
@@ -457,9 +444,8 @@ This is true for the areas of the tree with little posterior support for the cla
 
 <figure>
 	<a id="fig.DensiTree.part1"></a>
-	<img src="figures/Species_population1.png" alt="">
-	<figcaption>Figure 16: DensiTree representation of the
-consensus species tree from TreeAnnotator.</figcaption>
+	<img style="width:90.0%;" src="figures/Species_population1.png" alt="">
+	<figcaption>Figure 16: DensiTree representation of the consensus species tree from TreeAnnotator.</figcaption>
 </figure>
 <br>
 
@@ -468,9 +454,8 @@ Alternatively to TreeAnnotator, a consensus tree can be generated by [biopy](htt
 
 <figure>
 	<a id="fig.DensiTree.part2"></a>
-	<img  src="figures/Species_population2.png" alt="">
-	<figcaption>Figure 17: DensiTree representation of the
-consensus species tree from biopy.</figcaption>
+	<img style="width:90.0%;" src="figures/Species_population2.png" alt="">
+	<figcaption>Figure 17: DensiTree representation of the consensus species tree from biopy.</figcaption>
 </figure>
 <br>
 
@@ -484,9 +469,7 @@ You can also compare the log files from both analyses by loading the log file fr
 <figure>
 	<a id="fig.tracerPrior"></a>
 	<img  src="figures/Tracer_compareToPrior.png" alt="">
-	<figcaption>Figure 18: Tracer showing the comparison between the
-prior and posterior distribution of the species tree
-height.</figcaption>
+	<figcaption>Figure 18: Tracer showing the comparison between the prior and posterior distribution of the species tree height.</figcaption>
 </figure>
 <br>
 
