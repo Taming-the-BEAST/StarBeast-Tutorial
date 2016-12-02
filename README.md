@@ -468,7 +468,7 @@ You can also compare the log files from both analyses by loading the log file fr
 
 <figure>
 	<a id="fig.tracerPrior"></a>
-	<img  src="figures/Tracer_compareToPrior.png" alt="">
+	<img style="width:90.0%;" src="figures/Tracer_compareToPrior.png" alt="">
 	<figcaption>Figure 18: Tracer showing the comparison between the prior and posterior distribution of the species tree height.</figcaption>
 </figure>
 <br>
