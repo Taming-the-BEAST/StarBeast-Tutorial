@@ -4,6 +4,7 @@ beastversion: 2.4.x
 tracerversion: 1.6
 figtreeversion: 1.4.2
 level: Professional
+title: StarBeast Tutorial
 ---
 
 
