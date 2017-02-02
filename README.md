@@ -3,7 +3,7 @@ author: Joseph Heled,Remco Bouckaert,Walter Xie,Alexei J. Drummond,Chi Zhang
 beastversion: 2.4.x
 tracerversion: 1.6
 figtreeversion: 1.4.2
-level: Professional
+level: Intermediate
 title: StarBeast Tutorial
 ---
 
